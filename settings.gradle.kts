@@ -17,3 +17,4 @@ rootProject.name = "Milkify"
 include(":app")
 include(":core:utils")
 include(":core:networking")
+include(":core:designsystem")
