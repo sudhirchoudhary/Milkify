@@ -1,24 +1,18 @@
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
-    alias(libs.plugins.com.android.application)
+    alias(libs.plugins.com.android.library)
     alias(libs.plugins.org.jetbrains.kotlin.android)
 }
 
 android {
-    namespace = "com.sudhir.milkify"
+    namespace = "com.sudhir.authentication"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.sudhir.milkify"
         minSdk = 28
-        targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -45,28 +39,12 @@ android {
         named("libs").
         findVersion("androidxComposeCompiler").get().toString()
     }
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
 }
 
 dependencies {
-
-    implementation(project(":core:utils"))
     implementation(project(":core:designsystem"))
-    implementation(project(":feature:authentication"))
-
-    implementation(libs.core.ktx)
-    implementation(libs.lifecycle.runtime.ktx)
+    implementation(project(":core:utils"))
     implementation(libs.activity.compose)
-    implementation(platform(libs.compose.bom))
-    implementation(libs.ui)
-    implementation(libs.accompanist.systemuicontroller)
-    implementation(libs.ui.graphics)
-    implementation(libs.ui.tooling.preview)
-    implementation(libs.material3)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)

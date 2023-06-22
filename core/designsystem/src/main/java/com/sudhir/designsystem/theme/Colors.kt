@@ -11,6 +11,7 @@ val colorLightTextSecondary = Color(0xFF000000)
 val colorLightIconsTintSecondary = Color(0xFF000000)
 val colorLightBackground = Color(0xFFFFFFFF)
 val colorLightError = Color(0xFFD62222)
+val colorLightDisabledTextColor = Color(0xFF5E5D5D)
 
 
 
@@ -21,3 +22,5 @@ val colorDarkSecondary = Color(0xFF00FF77)
 val colorDarkTextSecondary = Color(0xFFFFB400)
 val colorDarkBackground = Color(0xFFFFB400)
 val colorDarkError = Color(0xFFD62222)
+val colorDarkIconsTintSecondary = Color(0xFF000000)
+val colorDarkDisabledTextColor = Color(0xFFD62222)

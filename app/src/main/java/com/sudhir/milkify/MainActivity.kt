@@ -29,6 +29,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import com.sudhir.authentication.AuthenticationScreen
 import com.sudhir.designsystem.components.ActionIcon
 import com.sudhir.designsystem.components.AppBarsActionType
 import com.sudhir.designsystem.components.MilkifyBasicTopAppBar
@@ -57,7 +58,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MilkifyTheme.colors.background
                 ) {
-                    val actions = listOf(
+                    /*val actions = listOf(
                         ActionIcon(
                             actionIcon = MilkifyIcons.SearchIcon,
                             actionIconType = AppBarsActionType.Search,
@@ -81,7 +82,9 @@ class MainActivity : ComponentActivity() {
                         Box(modifier = Modifier.padding(it)) {
 
                         }
-                    }
+                    }*/
+
+                    AuthenticationScreen()
                 }
             }
         }
