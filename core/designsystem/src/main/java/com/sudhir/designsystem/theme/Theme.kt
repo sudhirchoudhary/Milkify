@@ -29,6 +29,7 @@ fun lightColors(
     secondary = secondary,
     textSecondary = textSecondary,
     iconsTintPrimary = iconsTintPrimary,
+    disabledTextColor = colorLightDisabledTextColor,
     isLight = true
 )
 fun localColors(isSystemInDark: Boolean = false) = staticCompositionLocalOf {
@@ -56,6 +57,7 @@ fun darkColors(
     secondary = secondary,
     textSecondary = textSecondary,
     iconsTintPrimary = iconsTintPrimary,
+    disabledTextColor = colorDarkDisabledTextColor,
     isLight = false
 )
 
@@ -85,6 +87,7 @@ class MilkifyAppColors(
     iconsTintPrimary: Color,
     background: Color,
     error: Color,
+    disabledTextColor: Color,
     isLight: Boolean
 ) {
     var primary by mutableStateOf(primary)
@@ -103,6 +106,8 @@ class MilkifyAppColors(
         internal set
     var background by mutableStateOf(background)
         internal set
+    var disabledTextColor by mutableStateOf(disabledTextColor)
+        internal set
 
     fun copy(
         primary: Color = this.primary,
@@ -112,6 +117,7 @@ class MilkifyAppColors(
         background: Color = this.background,
         error: Color = this.error,
         iconsTintPrimary: Color = this.iconsTintPrimary,
+        disabledTextColor: Color = this.disabledTextColor,
         isLight: Boolean = this.isLight
     ): MilkifyAppColors = MilkifyAppColors(
         primary = primary,
@@ -121,6 +127,7 @@ class MilkifyAppColors(
         background = background,
         error = error,
         iconsTintPrimary = iconsTintPrimary,
+        disabledTextColor = disabledTextColor,
         isLight = isLight
     )
 

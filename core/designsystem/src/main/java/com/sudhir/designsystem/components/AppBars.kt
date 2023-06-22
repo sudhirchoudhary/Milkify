@@ -1,6 +1,10 @@
 package com.sudhir.designsystem.components
 
 import androidx.annotation.StringRes
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -37,6 +41,9 @@ fun MilkifyBasicTopAppBar(
         title = { Text(text = stringResource(id = title)) },
         modifier = modifier,
         navigationIcon = {
+            BackArrowButton {
+                onNavigationIconClick()
+            }
             IconButton(onClick = { onNavigationIconClick() }) {
                 Icon(
                     imageVector = navigationIcon,
@@ -49,6 +56,20 @@ fun MilkifyBasicTopAppBar(
         },
         colors = colors
     )
+}
+
+@Composable
+fun TransparentTopAppBar(
+    modifier: Modifier = Modifier
+) {
+    Row(
+        modifier = modifier
+            .fillMaxWidth()
+            .background(color = Color.Transparent),
+        horizontalArrangement = Arrangement.Start
+    ) {
+        BackArrowButton()
+    }
 }
 
 @Composable
@@ -79,6 +100,8 @@ data class ActionIcon(
     val contentDescription: String? = null,
     val color: Color? = null
 )
+
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Preview
@@ -115,4 +138,10 @@ fun MilkifyActionsTopAppBarPreview(
         navigationIconDescription = null,
         actions = actions
     )
+}
+
+@Preview
+@Composable
+fun TransparentTopAppBarPrev() {
+    TransparentTopAppBar()
 }
